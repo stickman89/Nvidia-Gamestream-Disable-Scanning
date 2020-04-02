@@ -24,10 +24,10 @@ start /wait notepad.exe "%APPDATA%/../Local/NVIDIA/NvBackend/config.xml"
 timeout 2 > NUL
 cls
 
-::: REMOVE AND RECREATE VISUALOPSDATA :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: BACKUP AND RECREATE VISUALOPSDATA ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-echo Clearing existing 'VisualOPSData'...
-rmdir "VisualOPSData" /S /Q
+echo Backing up existing 'VisualOPSData'...
+ren VisualOPSData backup_VisualOPSData
 mkdir "VisualOPSData"
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -35,7 +35,7 @@ mkdir "VisualOPSData"
 timeout 2 > NUL
 cls
 
-::: SET READONLY ATTRIBUTE ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: SET READONLY ATTRIBUTE :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 echo Setting file and folder attributes appropriately...
 attrib +r "VisualOPSData"
@@ -48,11 +48,11 @@ attrib +r "config.xml"
 timeout 2 > NUL
 cls
 
-::: DELETE EXISTING DATA ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::: BACKUP EXISTING DATA ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-echo Removing existing 'JournalBS' data...
-del "journalBS.jour.dat"
-del "journalBS.main.xml"
+echo Backing up existing 'JournalBS' data...
+ren journalBS.jour.dat backup_journalBS.jour.dat
+ren journalBS.main.xml backup_journalBS.main.xml
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
