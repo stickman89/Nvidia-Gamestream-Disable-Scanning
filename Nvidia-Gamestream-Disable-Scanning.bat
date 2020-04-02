@@ -24,7 +24,7 @@ start /wait notepad.exe "%APPDATA%/../Local/NVIDIA/NvBackend/config.xml"
 timeout 2 > NUL
 cls
 
-:: REMOVE AND RECREATE VISUALOPSDATA ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::: REMOVE AND RECREATE VISUALOPSDATA :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 echo Clearing existing 'VisualOPSData'...
 rmdir "VisualOPSData" /S /Q
@@ -35,7 +35,7 @@ mkdir "VisualOPSData"
 timeout 2 > NUL
 cls
 
-:: SET READONLY ATTRIBUTE :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::: SET READONLY ATTRIBUTE ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 echo Setting file and folder attributes appropriately...
 attrib +r "VisualOPSData"
